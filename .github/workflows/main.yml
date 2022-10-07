@@ -17,6 +17,7 @@ jobs:
     - name: 傳輸到主機🚀
       uses: SamKirkland/FTP-Deploy-Action@4.3.2
       with:
+        local-dir: dist/
         server: ${{ secrets.FTP_SERVER }}
         username: ${{ secrets.FTP_USERNAME }}
         password: ${{ secrets.FTP_PASSWORD }}
