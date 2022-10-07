@@ -15,10 +15,10 @@ jobs:
         npm ci
         npm run build
     - name: 傳輸到主機🚀
-      uses: SamKirkland/FTP-Deploy-Action@4.3.2
+      uses: SamKirkland/FTP-Deploy-Action@2.1.0
       with:
+        ftp-server: ${{ secrets.FTP_SERVER }}
+        ftp-username: ${{ secrets.FTP_USERNAME }}
+        ftp-password: ${{ secrets.FTP_PASSWORD }}
         branch: master
         folder: ./dist/
-        server: ${{ secrets.FTP_SERVER }}
-        username: ${{ secrets.FTP_USERNAME }}
-        password: ${{ secrets.FTP_PASSWORD }}
