@@ -9,7 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - name: 檢查檔案🔍
-      uses: actions/checkout@v2.1.0
+      uses: actions/checkout@master
     - name: 打包和輸出📦
       run:
         npm ci
@@ -17,8 +17,7 @@ jobs:
     - name: 傳輸到主機🚀
       uses: SamKirkland/FTP-Deploy-Action@3.1.1
       with:
+        local-dir: ./dist/
         ftp-server: ${{ secrets.FTP_SERVER }}
         ftp-username: ${{ secrets.FTP_USERNAME }}
         ftp-password: ${{ secrets.FTP_PASSWORD }}
-        branch: master
-        folder: ./dist/
