@@ -1,6 +1,6 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Kip's vue website"/>
+  <HelloWorld msg="哈囉，歡迎來到我的網站。"/>
 </template>
 
 <script>
